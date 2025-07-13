@@ -55,4 +55,4 @@ chaeacters.forEach((item)=> {
 
     document.body.append(block)
 })
-
+ 

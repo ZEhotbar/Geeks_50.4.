@@ -45,7 +45,8 @@
     flex-direction: column;
     justify-content: center;
     height: 170px;
-}
+
+}   
 
 .tab_content_block p {
     color: white;

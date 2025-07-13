@@ -120,6 +120,6 @@ input {
 }
 
 :root {
-    --orange: orange;
+    --orange: rgb(29, 56, 72);
     --black: black;
 }
