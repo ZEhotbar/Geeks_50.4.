@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Можно заменить на Futura */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +12,7 @@
 }
 
 body {
-    font-family: "Britannic Bold", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: #c2d0d0;
 }
 
@@ -101,23 +103,46 @@ input {
 }
 
 .btn-slide {
-    display: block;
-    width: 100px;
-    height: 100px;
-    background: var(--orange);
+    position: relative;
+    padding: 15px 30px;
     color: black;
-    font-size: 20px;
+    font-weight: 900; 
     text-transform: uppercase;
-    border-radius: 50%;
-    font-weight: 800;
-    z-index: 1;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    background: white;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.btn-slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    z-index: -1;
 }
 
 .btn-slide:hover {
-    background: #b68733 !important;
-    cursor: pointer;
+    background: rgb(14, 12, 12);
     color: white;
 }
+
+.btn-slide:hover::after {
+    opacity: 1;
+}
+
+.btn-slide:active {
+    transform: scale(0.95);
+}
+
 
 :root {
     --orange: rgb(29, 56, 72);

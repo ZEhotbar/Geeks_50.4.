@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Sam",
+    "age": 35,
+    "img": "https://images.stopgame.ru/news/2021/08/25/D4ULBI5X.jpg"
+  },
+  {
+    "name": "Fragile",
+    "age": 30,
+    "img": "https://i.playground.ru/i/pix/3385066/image.jpg"
+  },
+  {
+    "name": "Cliff",
+    "age": 40,
+    "img": "https://coop-land.ru/uploads/posts/2021-03/thumbs/1615282770_13497bf4c1ce6203_1920xh.jpg"
+  },
+  {
+    "name": "Amelie",
+    "age": "???",
+    "img": "https://cdn.mos.cms.futurecdn.net/y8EHH8ytpxB3wWjuc8caP3.jpg"
+  }
+]

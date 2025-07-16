@@ -75,3 +75,16 @@ prev.onclick = () => {
 }
 
 autoSlider(index)
+
+// мой JSON фаил 
+
+const xhr = new XMLHttpRequest();
+
+xhr.open('GET','./data/super.json',true);
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.onload = () => {
+    console.log(JSON.parse(xhr.responseText));
+}
+
+xhr.send();

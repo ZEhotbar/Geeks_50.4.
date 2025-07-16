@@ -1,9 +1,8 @@
-// MODAL
+//MODAL
 
 const modal = document.querySelector('.modal')
-const modalOpenBTn = document.querySelector('#btn-get')
+const modalOpenBtn = document.querySelector('#btn-get')
 const modalCloseBtn = document.querySelector('.modal_close')
-
 
 const open = () => {
     modal.style.display = 'block'
@@ -12,19 +11,22 @@ const close = () => {
     modal.style.display = 'none'
 }
 
-modalOpenBTn.onclick = open
+modalOpenBtn.onclick = open
 modalCloseBtn.onclick = close
-modal.onclick = close 
 
-
-
-const onSkrol = () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        open();
-        window.removeEventListener('scroll' , onSkrol);
+modal.onclick = (event) => {
+    if (event.target === modal) {
+        close();
     }
 }
 
-window.addEventListener('scroll' , onSkrol)
+// Обновлённый скролл
+const onScroll = () => {
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 1) {
+        open();
+        window.removeEventListener('scroll', onScroll);
+    }
+};
+window.addEventListener('scroll', onScroll);
 
-setInterval(open , 10000)
+setInterval(open, 10000);
