@@ -29,4 +29,4 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll);
 
-setInterval(open, 10000);
+setInterval(open, 100000);

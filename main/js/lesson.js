@@ -38,7 +38,8 @@ const showTabContent = (i = 0) =>{
     tabContentBlock[i].style.display = 'block';
     tabs[i].classList.add('tab_content_item_active');
 }
- 
+
+
 hideTabContent();
 showTabContent();
 
@@ -68,3 +69,84 @@ setInterval(() => {
     hideTabContent();
     showTabContent(indexSlider);
 },5000)
+
+
+
+// CONvetor 
+const somInput = document.querySelector('#som');
+const usdInput = document.querySelector('#usd');
+const eurInput = document.querySelector('#eur');
+
+const converter = (element) => {
+    element.oninput = () => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', '../data/converter.json');
+        xhr.setRequestHeader('Content-type', 'application/json');
+        xhr.send();
+
+        xhr.onload = () => {
+            const data = JSON.parse(xhr.response);
+
+            if (element.id === 'som') {
+                usdInput.value = (element.value / data.usd).toFixed(2);
+                eurInput.value = (element.value / data.eur).toFixed(2);
+            }
+
+            if (element.id === 'usd') {
+                somInput.value = (element.value * data.usd).toFixed(2);
+                eurInput.value = ((element.value * data.usd) / data.eur).toFixed(2);
+            }
+
+            if (element.id === 'eur') {
+                somInput.value = (element.value * data.eur).toFixed(2);
+                usdInput.value = ((element.value * data.eur) / data.usd).toFixed(2); 
+            }
+
+            if (element.value === '') {
+                eurInput.value = '';
+                somInput.value = '';
+                usdInput.value = '';
+            }
+        };
+    };
+};
+
+converter(somInput);
+converter(usdInput);
+converter(eurInput);
+
+// somImput.oninput = () => {
+    
+    
+//     const xhr = new  XMLHttpRequest();
+//     xhr.open('GET','../data/converter.json');
+//     xhr.setRequestHeader('Content-type','application/json')
+//     xhr.send();
+    
+    
+//     xhr.onload = () => {
+//         const VasheBezRaznitce = JSON.parse(xhr.response)
+//         usdInput.value = (somImput.value  / VasheBezRaznitce.usd).toFixed(2);
+//     }
+// };
+
+// somImput.oninput = () => {
+    
+    
+//     const xhr = new  XMLHttpRequest();
+//     xhr.open('GET','../data/converter.json');
+//     xhr.setRequestHeader('Content-type','application/json')
+//     xhr.send();
+    
+    
+//     xhr.onload = () => {
+//         const VasheBezRaznitce = JSON.parse(xhr.response)
+//         somImput.value = (usdInput.value  * VasheBezRaznitce.usd).toFixed(2);
+//     }
+// };
+
+//  DRY - don't repeat yourself
+//  KISS - keep is simple, stuped!!
+//  KISS - keep is super simple
+//  BEM - ... 
+
