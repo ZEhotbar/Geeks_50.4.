@@ -35,15 +35,15 @@ xhr.onload = () => {
         const isActive = card.classList.contains('active');
 
         if (isActive) {
-        cards.forEach(c => {
-            c.classList.remove('hidden', 'active');
-            c.querySelector('.character-info').style.display = 'none';
+        cards.forEach(styles => {
+            styles.classList.remove('hidden', 'active');
+            styles.querySelector('.character-info').style.display = 'none';
         });
         } else {
-        cards.forEach(c => {
-            c.classList.add('hidden');
-            c.classList.remove('active');
-            c.querySelector('.character-info').style.display = 'none';
+        cards.forEach(styles => {
+            styles.classList.add('hidden');
+            styles.classList.remove('active');
+            styles.querySelector('.character-info').style.display = 'none';
         });
 
         card.classList.remove('hidden');
