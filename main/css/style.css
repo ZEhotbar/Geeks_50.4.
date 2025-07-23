@@ -1,15 +1,18 @@
 /* HEADER */
-
 .header {
     height: 80px;
-    background:     #2c2d2f50;
+    background: #2c2d2f50;
     display: flex;
     align-items: center;
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 2;
+    clip-path: polygon(0 0, 50px 100%, 100% 100%, 100% 0);
 }
+
+
+
 
 .inner_header {
     height: 100%;
@@ -97,6 +100,17 @@
     transition: transform 0.3s ease;
     box-shadow: 0 0 10px var(--orange), 0 0 20px var(--orange);
     opacity: 0;
+}
+
+.menu_link a.active {
+    color: #fff;
+    text-shadow: 0 0 5px var(--orange), 0 0 10px var(--orange);
+}
+
+.menu_link a.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+    opacity: 1;
 }
 
 .menu_link a:hover::after {

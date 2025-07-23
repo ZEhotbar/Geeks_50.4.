@@ -83,33 +83,3 @@ btn_Restart.onclick = (()=>{
     interval_second.innerHTML = tim_second;
 })
 
-// homwork 4 cards 
-
-
-function users() {
-    const xhr = new XMLHttpRequest();
-    xhr.open("GET","../data/data.json");
-    xhr.setRequestHeader('Content-type','application/json');
-    xhr.send();
-
-
-    xhr.onload = () => {
-        const data = JSON.parse(xhr.response);
-        const container = document.querySelector('.characters-list');
-        const foto_img = 'https://static.wikia.nocookie.net/deathstranding/images/b/bd/Cliff_DS.png' 
-
-        data.forEach(element => {
-            const div_create = document.createElement('div');
-            div_create.setAttribute('class','cards');
-            div_create.innerHTML = `
-            <div class="character-card">
-                <img class="character-photo" src="${element.img || foto_img}" alt="${element.name}">
-                <p>Name:${element.name}</p>
-                <span>Age:${element.age}</span>
-            </div>
-            `;
-            container.append(div_create);
-        });
-    }
-}
-users();

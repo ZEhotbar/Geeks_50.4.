@@ -42,6 +42,7 @@
 }
 
 .parent_block {
+    background-image: url();
     height: 500px;
     width: 500px;
     border: 1px solid var(--orange);

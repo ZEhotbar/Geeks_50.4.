@@ -115,38 +115,49 @@ converter(somInput);
 converter(usdInput);
 converter(eurInput);
 
-// somImput.oninput = () => {
-    
-    
-//     const xhr = new  XMLHttpRequest();
-//     xhr.open('GET','../data/converter.json');
-//     xhr.setRequestHeader('Content-type','application/json')
-//     xhr.send();
-    
-    
-//     xhr.onload = () => {
-//         const VasheBezRaznitce = JSON.parse(xhr.response)
-//         usdInput.value = (somImput.value  / VasheBezRaznitce.usd).toFixed(2);
-//     }
-// };
 
-// somImput.oninput = () => {
-    
-    
-//     const xhr = new  XMLHttpRequest();
-//     xhr.open('GET','../data/converter.json');
-//     xhr.setRequestHeader('Content-type','application/json')
-//     xhr.send();
-    
-    
-//     xhr.onload = () => {
-//         const VasheBezRaznitce = JSON.parse(xhr.response)
-//         somImput.value = (usdInput.value  * VasheBezRaznitce.usd).toFixed(2);
-//     }
-// };
+const cardBLock = document.querySelector('.card')
+const btnNext = document.querySelector('#btn-next')
+const btnBack = document.querySelector('#btn-prev')
 
-//  DRY - don't repeat yourself
-//  KISS - keep is simple, stuped!!
-//  KISS - keep is super simple
-//  BEM - ... 
+let numID = 1;
 
+const render = (data) => {
+        const {title, id , completed} = data;
+        cardBLock.style.borderColor = completed ? 'green' : 'red';
+        cardBLock.style.borderColor =  
+        cardBLock.innerHTML =`
+        <p>${title}</p>
+        <p>${completed}</p>
+        <span>${id}</span>`
+};
+const  dataFetch= () => {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${numID}`)
+    .then((response) => response.json())
+    .then((data) => {
+        render(data)
+    })
+};
+
+
+btnNext.onclick = () => {
+    numID = numID === 200 ? 1 : numID + 1;
+    dataFetch();
+};
+
+btnBack.onclick = () => { 
+    numID = numID === 1 ? 200 : numID - 1;
+    dataFetch();
+};
+
+dataFetch();
+
+// fetch запрос 
+
+const data2 = fetch('https://jsonplaceholder.typicode.com/posts')
+.then((response) => response.json())
+.then(data2 =>{
+    data2.forEach(item => {
+        console.log(item);
+    })
+})

@@ -2,12 +2,14 @@
   {
     "name": "Sam",
     "age": 35,
-    "img": "https://images.stopgame.ru/news/2021/08/25/D4ULBI5X.jpg"
+    "img": "https://images.stopgame.ru/news/2021/08/25/D4ULBI5X.jpg",
+    "info": "Сэм Бриджес (Сэм Стрэнд) — персонаж игры Death Stranding, сыгранный Норманом Ридусом; сын Клиффа Уингера и Лизы Бриджес с ДУМ-способностями, умирал и воскресал, став бессмертным, работал курьером в Бриджес, покинул организацию после катастрофы, страдает от эмоциональной боли и нападок, молчаливый и предпочитает не выделяться в диалогах."
   },
   {
     "name": "Fragile",
     "age": 30,
-    "img": "https://i.playground.ru/i/pix/3385066/image.jpg"
+    "img": "https://i.playground.ru/i/pix/3385066/image.jpg",
+    "info": "Fragile — центральный персонаж Death Stranding, глава «Фрэджайл Экспресс», играет ключевую роль в сюжетной миссии с бомбой, которую можно доставить ей или в Южный Кнот-Сити; её можно найти в распределительном центре к югу от Озёрного Кнота после отдыха Сэма."
   },
   {
     "name": "Cliff",
@@ -18,5 +20,15 @@
     "name": "Amelie",
     "age": "???",
     "img": "https://cdn.mos.cms.futurecdn.net/y8EHH8ytpxB3wWjuc8caP3.jpg"
+  },
+  {
+    "name": "Die-Hardman",
+    "age": "58",
+    "img": "https://wallpapers.com/images/hd/hd-death-stranding-background-54oyhg2c0lbbgniu.jpg"
+  },
+  {
+    "name": "Higgs ",
+    "age": "40",
+    "img": "https://i.ytimg.com/vi/A_bwPqV71MM/maxresdefault.jpg"
   }
 ]

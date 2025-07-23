@@ -1,0 +1,117 @@
+
+
+    /* базовые стили */
+    html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--gray-bg);
+    color: #fff;
+    }
+
+    /* обертка — флекс-контейнер */
+    .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    }
+
+    /* основной контент */
+    .container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    }
+
+    /* секция персонажей */
+    .characters {
+    padding: 90px 0;
+    background: var(--gray-bg);
+    text-align: center;
+    }
+
+    .characters h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 30px;
+    }
+
+    .characters-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    }
+
+    /* карточки */
+    .character-card {
+    border: 1px solid rgb(24, 24, 38);
+    background: #12121337;
+    padding: 15px;
+    width: 250px;
+    border-radius: 12px;
+    box-shadow: #2f4858;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .character-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--orange);
+    }
+
+    .character-card.hidden {
+    display: none;
+    }
+
+    .character-card.active {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--orange);
+    z-index: 10;
+    position: relative;
+    grid-column: 1 / -1; 
+    width: 100%;
+    }
+    .character-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #ccc;
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: left;
+    line-height: 1.5;
+    }
+
+
+
+    /* изображения */
+    .character-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    }
+
+    .character-card p,
+    .character-card span {
+    margin: 5px 0;
+    font-size: 1rem;
+    }
+
+
+    .footer {
+    background: #1f2023;
+    padding: 30px 0;
+    text-align: center;
+    }
+
+    .inner_footer h2 {
+    margin: 0;
+    color: #2f4858;
+    font-weight: 700;
+    }

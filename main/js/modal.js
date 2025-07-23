@@ -30,3 +30,12 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 
 setInterval(open, 100000);
+
+// link css active 
+const current = location.pathname.split('/').pop();
+
+document.querySelectorAll('.menu_link a').forEach(link => {
+    if (link.href.includes(current)) {
+    link.classList.add('active');
+    }
+});
