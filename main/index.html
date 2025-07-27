@@ -28,25 +28,27 @@
                         <a href="pages/сharacters.html">Characters</a>
                     </li>
                     <li class="menu_link">
+                        <a href="pages/cards.html">Cards</a>
+                    </li>
+                    <li class="menu_link">
                         <a href="https://t.me/nurdinbuy16" target="_blank">Send message</a>
                     </li>
                 </ul>
-                <button class="btn" id="btn-get">Click me!</button>
+                <button class="btn" id="btn-get">Order!</button>
             </div>
         </div>
     </div>
 
     <div class="main_block">
-        <video id="bg-video" autoplay muted loop playsinline><source src="./vidio/Death Stranding - Official Launch Trailer [l_bd0kIUZRU] (video-converter.com).mp4" type="video/mp4"> </video>
         <div class="container">
+            <div class="vidio_logo_main">
+            <video id="bg-video" autoplay muted loop playsinline>
+            <source src="./vidio/Death Stranding - Official Launch Trailer [l_bd0kIUZRU] (video-converter.com).mp4" type="video/mp4">
+            </video>
+            </div>
             <div class="inner_main">
                 <img id="Img_logo_main"src="https://image.ceneostatic.pl/data/article_picture/81/55/b4bb-06b7-47aa-a218-828d3c2071f1_large.png" alt="Logo">
-                <div class="colors-buttons">
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                    <button class="btn btn-color"></button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -58,7 +60,7 @@
                     <button class="btn-slide" id="prev">&lt;prev</button>
                     <div class="slide active_slide">
                         <div class="slide_card">
-                            <h3>regular expression</h3>
+                            <h3></h3>
                             <p>Простыми словами, регулярное выражение - это набор символов, который задает определенные правила для поиска и сопоставления текста. Вы можете использовать регулярные выражения, чтобы найти определенные строки в тексте, заменить части строки на другие значения или извлечь нужную информацию из текста.</p>
                             <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Regular_expressions" target="_blank">Узнать подробнее</a>
                         </div>
@@ -106,9 +108,18 @@
 
     <div class="block_video">
         <div class="container">
-            <h3>Полезный ролик про Event Loop</h3>
+            <h3>Death Stranding Trailer</h3>    
             <div class="inner_block_video">
-                <iframe width="80%" height="450" src="https://www.youtube.com/embed/zDlg64fsQow" title="YouTube video player" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe id="video-frame"
+                        width="80%" height="450" 
+                        src="https://www.youtube.com/embed/tCI396HyhbQ?t=1" 
+                        title="YouTube video player" 
+                        allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                <div class="colors-buttons">
+                    <button class="btn btn-color btn-video active">Triler3</button>
+                </div>
             </div>
         </div>
     </div>

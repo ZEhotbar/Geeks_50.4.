@@ -73,19 +73,15 @@ setInterval(() => {
 
 
 // CONvetor 
-const somInput = document.querySelector('#som');
 const usdInput = document.querySelector('#usd');
+const somInput = document.querySelector('#som');
 const eurInput = document.querySelector('#eur');
 
 const converter = (element) => {
-    element.oninput = () => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', '../data/converter.json');
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.send();
-
-        xhr.onload = () => {
-            const data = JSON.parse(xhr.response);
+    element.oninput = async () => {
+        try {
+            const response = await fetch('../data/converter.json');
+            const data = await response.json();
 
             if (element.id === 'som') {
                 usdInput.value = (element.value / data.usd).toFixed(2);
@@ -107,7 +103,10 @@ const converter = (element) => {
                 somInput.value = '';
                 usdInput.value = '';
             }
-        };
+
+        } catch (e) {
+            console.log(e);
+        }
     };
 };
 
@@ -116,6 +115,7 @@ converter(usdInput);
 converter(eurInput);
 
 
+// cards SWithers
 const cardBLock = document.querySelector('.card')
 const btnNext = document.querySelector('#btn-next')
 const btnBack = document.querySelector('#btn-prev')
@@ -131,12 +131,14 @@ const render = (data) => {
         <p>${completed}</p>
         <span>${id}</span>`
 };
-const  dataFetch= () => {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${numID}`)
-    .then((response) => response.json())
-    .then((data) => {
-        render(data)
-    })
+const  dataFetch =  async() => {
+    try{
+    const response =  await fetch(`https://jsonplaceholder.typicode.com/todos/${numID}`)
+    const data = await response.json()
+    render(data)
+    } catch(e) {
+        console.log(e);
+    }
 };
 
 
@@ -161,3 +163,36 @@ const data2 = fetch('https://jsonplaceholder.typicode.com/posts')
         console.log(item);
     })
 })
+
+//Wather 
+const searchInput = document.querySelector('.cityName'); 
+const searchButton = document.querySelector('#search');
+const city = document.querySelector('.city');
+const temp = document.querySelector('.temp');
+
+const API = 'https://api.openweathermap.org/data/2.5/weather';
+const API_KEY = 'e417df62e04d3b1b111abeab19cea714';
+
+
+const searchWather = async () => {
+        if (searchInput.value === '') {
+        city.innerHTML = 'Введите название города';
+    } else {
+        try {
+        const response = await fetch(`${API}?q=${searchInput.value}&appid=${API_KEY}&units=metric&lang=ru`)
+        const data =  await response.json()
+        city.innerHTML = data?.name || 'Города нет'
+        temp.innerHTML = data.main?.temp ? Math.round(data.main?.temp) + '&deg;C' : '';
+        searchInput.value = '';
+        } catch(e) {
+            console.log(e);
+        }
+    }
+}
+
+searchButton.onclick = () => searchWather()
+window.onkeydown = (event) => {
+    if (event.code === 'Enter') {
+        searchWather()
+    };
+}

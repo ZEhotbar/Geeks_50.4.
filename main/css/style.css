@@ -22,12 +22,12 @@
 }
 /* IMG_Logo-and-Vidio */
 #Img_logo_main {
-    width: 500px;
+    width: 700px;
     height: auto;
 
 }
 #bg-video {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
@@ -75,10 +75,11 @@
 .menu {
     display: flex;
     justify-content: space-around;
-    width: 600px;
+    width: 700px;
 }
 
 .menu_link a {
+    font-size: 18px;
     color: var(--orange);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -130,6 +131,9 @@
     padding: 100px 0;
     background: transparent;
 }
+.vidio_logo_main {
+    padding-bottom: 100px;
+}
 
 /* BUTTONS COLOR PICKER */
 
@@ -138,12 +142,11 @@
     justify-content: center; 
     gap: 20px;
     margin-top: 50px;
+    flex-direction: column;
+    padding-left: 20px;
 }
 
-.btn-color {
-    border-radius: 20px;
-    border-color: white !important;
-}
+
 
 /* FOOTER */
 
@@ -232,9 +235,14 @@
 }
 
 .inner_block_video {
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    width: 100%;
+    height: auto;
 }
 
 /* MODAL */

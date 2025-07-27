@@ -1,34 +1,70 @@
 // RANDOM COLOR GENERATOR
 
-const buttonsColor = document.querySelectorAll('.btn-color')
-const javaScript = document.querySelector('#js-color')
+// const buttonsColor = document.querySelectorAll('.btn-color')
+// const javaScript = document.querySelector('#js-color')
 
-const generateRandomColor = () => {
-    const hexCodes = '0123456789ABCDEF'
-    let color = ''
-    for (let i = 0; i < 6; i++) {
-        color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
+// const generateRandomColor = () => {
+//     const hexCodes = '0123456789ABCDEF'
+//     let color = ''
+//     for (let i = 0; i < 6; i++) {
+//         color += hexCodes[Math.floor(Math.random() * hexCodes.length)]
+//     }
+//     return '#' + color
+// }
+
+// const setRandomColors = () => {
+//     buttonsColor.forEach((buttonColor) => {
+//         buttonColor.innerHTML = generateRandomColor()
+//         buttonColor.onclick = (event) => {
+//             javaScript.style.color = event.target.innerHTML
+//         }
+//     })
+// }
+
+// window.onload = () => setRandomColors()
+// window.onkeydown = (event) => {
+//     if (event.code.toLowerCase() === 'space') {
+//         event.preventDefault()
+//         setRandomColors()
+//     }
+// }
+
+// btn vidio 
+const iframe = document.querySelector('#video-frame');
+const btnsContainer = document.querySelector('.colors-buttons');
+
+const LoadVidio = async () => {
+    try {
+        const response = await fetch("./data/video.json");
+        const data = await response.json();
+
+        iframe.src = "";
+
+        btnsContainer.innerHTML = ""; 
+        
+        iframe.src = data[0]?.url || "";
+
+        data.forEach((video, index) => {
+            const btn = document.createElement('button');
+            btn.className = 'btn btn-color btn-video';
+            btn.textContent = video.title || `Видео ${index + 1}`;
+
+
+            const  allBtns = document.querySelectorAll('.btn-video')
+
+            btn.onclick = () => {
+                iframe.src = video.url;
+                allBtns.classListadd('active')
+            };
+            btnsContainer.appendChild(btn);
+        });
+
+    } catch (e) {
+        console.log(e);
     }
-    return '#' + color
-}
+};
 
-const setRandomColors = () => {
-    buttonsColor.forEach((buttonColor) => {
-        buttonColor.innerHTML = generateRandomColor()
-        buttonColor.onclick = (event) => {
-            javaScript.style.color = event.target.innerHTML
-        }
-    })
-}
-
-window.onload = () => setRandomColors()
-window.onkeydown = (event) => {
-    if (event.code.toLowerCase() === 'space') {
-        event.preventDefault()
-        setRandomColors()
-    }
-}
-
+LoadVidio();
 // SLIDER BLOCK
 
 const slides = document.querySelectorAll('.slide')

@@ -1,150 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Можно заменить на Futura */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap'); /* Можно заменить на Futura */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-.container {
-    width: 1200px;
-    margin: 0 auto;
-}
+    .container {
+        width: 1200px;
+        margin: 0 auto;
+    }
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: #c2d0d0;
-}
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background: #c2d0d0;
+        overflow-x: hidden;
+    }
+    .btn {
+        width: 250px;
+        height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        border: 1px solid rgb(0, 0, 0);
+        background: white;
+        color: black;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition:
+            background  0.3s ease,
+            color 0.3s ease,
+            border 0.3s ease,
+            transform 0.1s ease,
+            box-shadow 0.2s ease;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        border: 1px solid whitesmoke;
 
-.btn {
-    width: 250px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    border: 1px solid var(--orange);
-    background: black;
-    color: var(--orange);
-    border-radius: 8px;
-}
-
-.btn:hover {
-    background: #414349;
-}
-
-.btn:active {
-    background: #56585D;
-    border: 2px solid var(--orange);
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-h1 {
-    text-align: center;
-    font-size: 70px;
-    color: white;
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-h2 {
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-h3 {
-    text-align: center;
-    font-size: 30px;
-    color: white;
-    margin: 0 auto;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-h4 {
-    font-size: 24px;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-strong {
-    color: #F79300;
-}
-
-label {
-    font-size: 24px;
-    color: var(--orange);
-}
-
-input {
-    width: 350px;
-    height: 50px;
-    font-size: 20px;
-    padding-left: 5px;
-    color: var(--orange);
-    background: black;
-    border: 2px solid var(--orange);
-}
-
-.checker {
-    color: white;
-    font-size: 30px;
-}
-
-.btn-slide {
-    position: relative;
-    padding: 15px 30px;
-    color: black;
-    font-weight: 900; 
-    text-transform: uppercase;
-    font-family: 'Arial Black', sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-    background: white;
-    border: none;
-    outline: none;
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.btn-slide::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
-    z-index: -1;
-}
-
-.btn-slide:hover {
-    background: rgb(14, 12, 12);
-    color: white;
-}
-
-.btn-slide:hover::after {
-    opacity: 1;
-}
-
-.btn-slide:active {
-    transform: scale(0.95);
-}
+    }
+    .btn-video {
+        clip-path: polygon(0 0, 100% 0, 90% 100%, 0 100%);
+    }
+    .btn-video.active {
+        background-color: #ffffff;
+        color: #000000;
+        border: 2px solid #ffffff;
+    }
 
 
-:root {
-    --orange: rgb(29, 56, 72);
-    --black: black;
-}
+    .btn:hover {
+        background: rgb(14, 12, 12);
+        color: white;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .btn:active {
+        background: rgb(14, 12, 12);
+        border: 2px solid var(--orange, orange);
+        transform: translateY(2px) scale(0.98);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 70px;
+        color: white;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 30px;
+        color: white;
+        margin: 0 auto;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    h4 {
+        font-size: 24px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    strong {
+        color: #F79300;
+    }
+
+    label {
+        font-size: 24px;
+        color: var(--orange);
+    }
+
+    input {
+        width: 350px;
+        height: 50px;
+        font-size: 20px;
+        padding-left: 5px;
+        color: var(--orange);
+        background: black;
+        border: 2px solid var(--orange);
+    }
+
+    .checker {
+        color: white;
+        font-size: 30px;
+    }
+
+    .btn-slide {
+        position: relative;
+        padding: 15px 30px;
+        color: black;
+        font-weight: 900; 
+        text-transform: uppercase;
+        font-family: 'Arial Black', sans-serif;
+        font-size: 16px;
+        cursor: pointer;
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        background: white;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+
+    .btn-slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 255, 255, 0.1);
+        opacity: 0;
+        transition: opacity 0.3s;
+        clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+        z-index: -1;
+    }
+
+    .btn-slide:hover {
+        background: rgb(14, 12, 12);
+        color: white;
+    }
+
+    .btn-slide:hover::after {
+        opacity: 1;
+    }
+
+    .btn-slide:active {
+        transform: scale(0.95);
+    }
+
+    :root {
+        --orange: rgb(29, 56, 72);
+        --black: black;
+    }

@@ -13,8 +13,6 @@ xhr.onload = () => {
     data.forEach(element => {
     const card = document.createElement('div');
     card.classList.add('character-card');
-
-    // Сохраняем дополнительную информацию в data-атрибут
     if (element.info) {
         card.dataset.info = element.info;
     }
