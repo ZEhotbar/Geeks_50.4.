@@ -5,11 +5,6 @@ async function users() {
                 "Content-Type": "application/json"
             }
         });
-
-        if (!response.ok) {
-            throw new Error(`Ошибка загрузки: ${response.status}`);
-        }
-
         const data = await response.json();
         const container = document.querySelector('.characters-list');
         const wrapper = document.querySelector('.wrapper');
